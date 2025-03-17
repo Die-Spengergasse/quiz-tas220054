@@ -13,8 +13,10 @@ public class Quiz
 {
     private List<Question> questions;
 
-    private Scanner scanner = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
+    Question q;
 
+    int nextQuestion = 0;
     public Quiz()
     {
 
@@ -25,17 +27,38 @@ public class Quiz
         List<Question> questions = query.getResultList();
     }
 
-    public void showQuestionAndAnswer()
+    public boolean showQuestionAndAnswer()
     {
-        Question question = null;
-        System.out.println(question.getText());
-        //List<Answer> answers = questions.getAnswerList();
-        for ( int i = 0; i < questions.size(); i++ )
+        if (nextQuestion >= questions.size())
         {
-            //Answer a = answers.get(i);
-           // System.out.println((i+1) + ")" + a.getText());
+            finish();
+
         }
-        System.out.print("Your answer: ");
-        int userAnswer = Integer.parseInt(scanner.nextLine());
+        Question q = questions.get(nextQuestion);
+        q.getAnswersList().clear();
+            List<Answer> answers = q.getAnswersList();
+            Question question = null;
+            System.out.println(question.getText());
+
+            for (int i = 0; i < answers.size(); i++) {
+                Answer a = answers.get(i);
+                System.out.println((i+1) + ")" + a.getText());
+            }
+            System.out.print("Your answer: ");
+            int userAnswer = Integer.parseInt(scanner.nextLine());
+            checkAnswer(q, userAnswer);
+            return true;
+
+    }
+
+    private void finish()
+    {
+
+
+    }
+
+    private  void checkAnswer (Question question, int userAnswer)
+    {
+
     }
 }

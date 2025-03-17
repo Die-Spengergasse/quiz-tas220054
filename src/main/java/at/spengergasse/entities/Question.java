@@ -46,5 +46,7 @@ public class Question {
         this.text = text;
     }
 
-
+    public List<Answer> getAnswersList() {
+        return answersList;
+    }
 }

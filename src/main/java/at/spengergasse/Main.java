@@ -15,6 +15,15 @@ public class Main {
         TypedQuery<Question> query = em.createQuery("select q from Question q", Question.class);
         List<Question> questions = query.getResultList();
 
+
+        Quiz quiz = new Quiz();
+        boolean show = true;
+        while (show) {
+            //show = quiz.nextQuestion()
+        }
+
+
+
         for (Question q : questions)
         {
             System.out.println(q);

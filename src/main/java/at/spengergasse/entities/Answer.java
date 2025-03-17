@@ -52,8 +52,10 @@ public class Answer
         return correct;
     }
 
-    public void setCorrect(boolean correct) {
+    public void setCorrect(boolean correct)
+    {
         this.correct = correct;
+
     }
 }
 
