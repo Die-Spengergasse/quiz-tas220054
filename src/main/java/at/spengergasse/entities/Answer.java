@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "a_answer")
+@Table(name = "a_answers")
 public class Answer
 {
 

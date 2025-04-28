@@ -16,7 +16,7 @@ public class Question {
     @Column(name = "q_text")
     private String text;
 
-    @OneToMany(mappedBy = "question")
+    @OneToMany(mappedBy = "question", fetch = FetchType.EAGER)
     private List<Answer> answersList;
 
 
@@ -26,7 +26,7 @@ public class Question {
                 "id=" + id +
                 ", text='" + text + '\'' +
                 '}';
-        
+
     }
 
 
@@ -49,4 +49,9 @@ public class Question {
     public List<Answer> getAnswersList() {
         return answersList;
     }
+
+    public void setAnswersList(List<Answer> answersList) {
+        this.answersList = answersList;
+    }
 }
+
