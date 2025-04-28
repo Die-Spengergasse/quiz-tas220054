@@ -21,8 +21,14 @@ public class Quiz
                 .createEntityManager();
 
         TypedQuery<Question> query = em.createQuery("select q from Question q", Question.class);
-        // List<Question> questions = query.getResultList();
-        this.questions = query.getResultList();
+         List<Question> questions = query.getResultList();
+        //this.questions = query.getResultList();
+
+        for (Question q : questions)
+        {
+            q.getAnswersList().size();
+        }
+        em.close();
     }
 
     public void start()

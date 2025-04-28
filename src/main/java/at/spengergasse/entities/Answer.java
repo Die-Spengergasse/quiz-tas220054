@@ -20,6 +20,10 @@ public class Answer
     @Column (name = "a_correct")
     private boolean correct;
 
+    @ManyToOne
+    @JoinColumn(name="fk_q_id")
+    private Question question;
+
 
 
 

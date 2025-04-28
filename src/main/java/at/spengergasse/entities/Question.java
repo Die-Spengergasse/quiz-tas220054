@@ -16,9 +16,8 @@ public class Question {
     @Column(name = "q_text")
     private String text;
 
-    @OneToMany
-    @JoinColumn(name = "fk_q_id")
-    private List<Answer> answersList = new ArrayList<Answer>();
+    @OneToMany(mappedBy = "question")
+    private List<Answer> answersList;
 
 
     @Override
@@ -27,6 +26,7 @@ public class Question {
                 "id=" + id +
                 ", text='" + text + '\'' +
                 '}';
+        
     }
 
 
